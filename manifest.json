@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Pont pour Claude",
+  "version": "1.0",
+  "description": "Sauvegarde ta discussion Claude en continu et passe à un nouveau chat en un clic, sans scroller. Jauge de longueur et pont par parties.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "content_scripts": [
+    { "matches": ["https://claude.ai/*"], "js": ["content.js"], "run_at": "document_idle" }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["main.js", "lib/*.js"], "matches": ["https://claude.ai/*"] }
+  ],
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}
